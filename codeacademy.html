@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3: Scales</title>
+	</head>
+	<body>
+        
+<script type="text/javascript">
+
+a. Define a function:
+      var myFunc = function(arg1, arg2){
+        // some code with arg1 and arg2;
+      };
+b. Iterate over an array:
+      for(var i = 0; i < array.length; i++){
+        // some code with array[i];
+      } 
+c. Looping from 10-1:
+      for(var i = 10; i > 0; i--){
+        // some code with i
+      }
+d. Skeleton of an if statement:
+      if(thisIsTrue){
+        // some code;
+      }else if(somethingElse){
+        // do some other code;
+      }else{
+        // do the default;
+      }
+e. Access for arrays and objects:
+	var myArray = [];
+	myArray.push(1);
+	myArray; // myArray now looks like this => [1]
+	myArray.push('hi');
+	myArray; // myArray now looks like this => [1, 'hi']
+
+	var myObj = {};
+	myObj['tony'] = '944 Market';
+	myObj; // myObj now looks like this => {'tony':'944 Market'}
+	var tempVariable = 'marcus';
+	myObj[tempVariable] = '944 Market';
+	myObj; // myObj now looks like this => {'tony':'944Market','marcus':'944 Market'} 
+  
+Arrays
+
+
+* join() - joins all elements of an array into a string. 
+ //syntax: str = arr.join(separator) 
+
+var a = new Array("Wind","Rain","Fire");
+var myVar1 = a.join();      // assigns "Wind,Rain,Fire" to myVar1
+var myVar2 = a.join(", ");  // assigns "Wind, Rain, Fire" to myVar2
+var myVar3 = a.join(" + "); // assigns "Wind + Rain + Fire" to myVar3
+
+* length() - an unsigned, 32-bit integer that specifies num of elements in array 
+  //syntax: array.length
+  can also set length property to truncate an array at any time
+  when extend array by changing length, you do not change num of actual elements in array! 
+    
+    //iterating over an array: 
+  var numbers = [1,2,3,4,5];
+  for (var i = 0; i < numbers.length; i++) {
+    numbers[i] *= 2;
+  } // numbers is now [2,4,6,8,10];
+  
+  //shortening an array: 
+  if (statesUS.length > 50) {
+   statesUS.length=50
+}
+  
+* pop() - removes last element from an array and returns that element 
+// syntax: arr.pop() 
+can be called or applied to objects resembling arrays. If call pop() an empty array, returns an 'undefined value' 
+
+//removing last element of an array 
+var myFish = ["angel", "clown", "mandarin", "surgeon"];
+
+console.log("myFish before: " + myFish);
+
+var popped = myFish.pop();
+
+console.log("myFish after: " + myFish);
+console.log("Removed this element: " + popped);
+
+* push() - appends elements and returns new length of Array
+//syntax: arr.push(elem1, ..., elemN)
+
+var sports = ["soccer", "baseball"]
+var push = sports.push("football", "swimming"); 
+
+console.log(sports); // ["soccer", "baseball", "football", "swimming"]
+console.log(push);   // ["soccer", "baseball", "football", "swimming"] 4
+
+* reverse() - reverses an array in place 
+//syntax: arr.reverse() 
+var myArray = ["one", "two", "three"];
+myArray.reverse(); 
+
+console.log(myArray) // ["three", "two", "one"]
+
+
+* shift() - removes first element from an array and returns that element. This changes the length of the array 
+//syntax: arr.shift(); 
+
+  var myFish = ["angel", "clown", "mandarin", "surgeon"];
+  console.log("myFish before: " + myFish);
+  var shifted = myFish.shift();
+  console.log("myFish after: " + myFish);
+  console.log("Removed this element: " + shifted);
+
+>> myFish before: angel,clown,mandarin,surgeon
+>> myFish after: clown,mandarin,surgeon
+>> Removed this element: angel
+
+* unshift() - adds 1+ elem to the start of an array and returns new length of the array 
+//syntax: arr.unshift(elem1, ..., elemnN) 
+
+var arr = [1, 2];
+arr.unshift(0); //result of call is 3, the new array length
+// arr is [0, 1, 2]
+
+arr.unshift(-2, -1); // = 5
+// arr is [-2, -1, 0, 1, 2]
+
+arr.unshift( [-3] );
+// arr is [[-3], -2, -1, 0, 1, 2]
+
+* slice() - returns shallow copy of a portion of an array 
+//syntax: arr.slice(begin[, end]) 
+
+slice does not alter the original array, but returns a new "one level deep" copy that contains copies of the elements sliced from the original array. Elements of the original array are copied into the new array as follows:
+
+slice method can also be called to convert Array-like objects / collections to a new Array. You just bind the method to the object. The arguments inside a function is an example of an 'array-like object'.
+
+function list() {
+  return Array.prototype.slice.call(arguments, 0);
+}
+
+var list1 = list(1, 2, 3);
+
+  >> [1, 2, 3]
+
+* splice() - changes content of an array, adding new elements while removing old ones; return an array containing the removed elements. If not elements are removed, an empty array is returned 
+// syntax: array.splice(index , howMany[, element1[, ...[, elementN]]])
+// array.splice(index) 
+
+
+Object.keys(yourObjectHere)
+
+* Strings: Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf method, or extracting substrings with the substring method.
+//syntax: String(thing)
+// new String(thing)
+// or "text" or 'text' 
+
+* charAt() - returns specified character from a string 
+//syntax: returns = string.charAt(index) 
+
+var anyString="Brave new world";
+document.writeln("The character at index 0 is '" + anyString.charAt(0) + "'");
+>> The character at index 0 is 'B'
+
+
+* concat() - 
+String: Combines text of 2+ strings and returns new string 
+string.concat(string2, string3 [, ..., stringN]) 
+
+var hello = "Hello, ";
+console.log(hello.concat("Kevin", " have a nice day."));
+>> Hello, Kevin have a nice day.
+
+N.B. +, += should be used instead for performance reasons 
+
+* indexOf() - Returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex,
+returns -1 if the value is not found.
+
+"Blue Whale".indexOf("Blue");     // returns  0
+
+  
+* length() - This property returns the number of code units in the string. UTF-16, the string format used by JavaScript, uses a single 16-bit code unit to represent the most common characters, but needs to use two code units for less commonly-used characters, so it's possible for the value returned by length to not match the actual number of characters in the string.
+
+For an empty string, length is 0.
+  
+
+* search() - Executes the search for a match between a regular expression and this String object.
+
+If successful, search returns the index of the regular expression inside the string. Otherwise, it returns -1.
+
+When you want to know whether a pattern is found in a string use 'search' (similar to the regular expression "test" method); for more information (but slower execution) use 'match' (similar to the regular expression exec method).
+
+//syntax string.search(regexp)
+
+* slice() - Extracts a section of a string and returns a new string.
+// string.slice(beginslice[, endSlice])
+
+slice extracts the text from one string and returns a new string. Changes to the text in one string do not affect the other string.
+
+slice extracts up to but not including endSlice. string.slice(1,4) extracts the second character through the fourth character (characters indexed 1, 2, and 3).
+
+As an example, string.slice(2,-1) extracts the third character through the second to last character in the string.
+
+
+* split() - Splits a String object into an array of strings by separating the string into substrings.
+// string.split([separator][, limit])
+
+see more: http://devdocs.io/javascript/global_objects/string/split
+  
+* substr() - Returns the characters in a string beginning at the specified location through the specified number of characters.
+// string.substr(start[, length])
+
+start is a character index. The index of the first character is 0, and the index of the last character is 1 less than the length of the string. substr begins extracting characters at start and collects length characters (unless it reaches the end of the string first, in which case it will return fewer).
+
+If start is positive and is greater than or equal to the length of the string, substr returns an empty string.
+
+If start is negative, substr uses it as a character index from the end of the string. If start is negative and abs(start) is larger than the length of the string, substr uses 0 as the start index. Note: the described handling of negative values of the start argument is not supported by Microsoft JScript .
+
+If length is 0 or negative, substr returns an empty string. If length is omitted, substr extracts characters to the end of the string.
+
+
+* toLowerCase() - The toLowerCase method returns the value of the string converted to lowercase. toLowerCase does not affect the value of the string itself.
+
+var upperText="ALPHABET";
+document.write(upperText.toLowerCase());
+>> "alphabet" 
+
+* toUpperCase() - The toUpperCase method returns the value of the string converted to uppercase. toUpperCase does not affect the value of the string itself.
+
+var lowerText="alphabet";
+document.write(lowerText.toUpperCase());
+>> "ALPHABET" 
+
+</script>
+        
+    </body>
+</html>
+
+

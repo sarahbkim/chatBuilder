@@ -1,0 +1,33 @@
+<!doctype html> 
+<html>
+<head> 
+	<meta charset="utf-8" /> 
+	<title>Demo</title>
+
+	<style>
+		a.test { 
+			font-weight: bold; 
+		}
+	</style>
+
+
+</head> 
+
+<body> 
+	<a href="http://jquery.com">jQuery</a>
+	<script src="jquery.js"></script> 
+	<script> 
+
+	//Launch code on Doc Ready after browsers finish loading d
+	$( document ).ready(function() { 
+		$( "a" ).click(function(event) { 
+			event.preventDefault(); 
+				$( this ).hide("slow"); 
+			})
+	});
+
+</script> 
+
+</body> 
+</html> 
+

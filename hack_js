@@ -1,0 +1,58 @@
+a. Define a function:
+      var myFunc = function(arg1, arg2){
+        // some code with arg1 and arg2;
+      };
+b. Iterate over an array:
+      for(var i = 0; i < array.length; i++){
+        // some code with array[i];
+      } 
+c. Looping from 10-1:
+      for(var i = 10; i > 0; i--){
+        // some code with i
+      } 
+d. Skeleton of an if statement:
+      if(thisIsTrue){
+        // some code;
+      }else if(somethingElse){
+        // do some other code;
+      }else{
+        // do the default;
+      }
+e. Access for arrays and objects:
+	var myArray = [];
+	myArray.push(1);
+	myArray; // myArray now looks like this => [1]
+	myArray.push('hi');
+	myArray; // myArray now looks like this => [1, 'hi']
+
+	var myObj = {};
+	myObj['tony'] = '944 Market';
+	myObj; // myObj now looks like this => {'tony':'944 Market'}
+	var tempVariable = 'marcus';
+	myObj[tempVariable] = '944 Market';
+	myObj; // myObj now looks like this => {'tony':'944 Market','marcus':'944 Market'}
+
+2. Here are the methods you should know - There are a lot of methods in Javascript, and you don't need to know all of them for our purposes, just these ones! Memorize what these do using MDN (mozilla developer network) or devdocs.io.  You don't need to know how to use them from memory; you can look up the syntax of how to use them.  But if I say splice, you should know that does something to cut up an array and cut a piece out of it.
+22
+	Arrays
+		join()
+		length()
+		pop()
+		push()
+		reverse()
+		shift()
+		unshift()
+		slice()
+		splice()
+	Object.keys(yourObjectHere)
+	Strings
+		charAt()
+		concat()
+		indexOf()
+		length()
+		search()
+		slice()
+		split()
+		substr()
+		toLowerCase()
+		toUpperCase()
